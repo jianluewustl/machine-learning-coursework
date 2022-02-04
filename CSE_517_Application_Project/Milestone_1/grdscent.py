@@ -18,7 +18,7 @@ def grdescent(func,w0,stepsize,maxiter,tolerance=1e-02):
     i = 0
 
     loss_hist = [np.inf]
-    while i < maxiter:
+    while i < =maxiter:
 
         loss_old, gradient_old = func(w)
         loss_new, gradient_new = func(w_new)
@@ -36,7 +36,7 @@ def grdescent(func,w0,stepsize,maxiter,tolerance=1e-02):
             w = w_new
             # print('Success')
             # loss_hist.append(loss)
-            c *= 1.001
+            c *= 1.0001
             update = np.dot(gradient_new, c)
             w_new = w - update
             i += 1
